@@ -1,5 +1,9 @@
 import pytest
-from solutions.file1 import highest_profit
+import os
+if(os.environ['solutions_env']):
+  from solutions.file1 import highest_profit
+else:
+  from challenges.file1 import highest_profit
 
 # Testing highest_profit with invalid inputs
 # Expected input: list of integers
