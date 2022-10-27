@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build the Docker image
+      uses: actions/checkout@v3
+   
+    - name: Build image and run unit tests
+      env:
+       solutions_env: TRUE
+       IMAGE_TAG: latest
+      run: |
+           docker build -f test.Dockerfile  -t test_tag:${IMAGE_TAG} .
+           docker run test_tag:${IMAGE_TAG}
