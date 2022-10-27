@@ -1,6 +1,6 @@
 import pytest
-import os
-if(os.environ['solutions_env']):
+from os import environ
+if(environ.get('solutions_env')):
   from solutions.file1 import highest_profit
 else:
   from challenges.file1 import highest_profit
@@ -36,7 +36,7 @@ def test_no_profit(apple_stock, profit):
 # Function should return the highest profit possible
 @pytest.mark.parametrize("apple_stock, profit", 
 [
-  ([0, 2000, 4000, 6000, 8000, 10000], 137800),
+  ([0, 2000, 4000, 6000, 8000, 10000], 10000),
   ([2000, 1000, 100, 200, 400, 100], 300),
   ([8, 5, 4, 3, 2, 7, 2], 5)
 ]
