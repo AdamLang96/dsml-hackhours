@@ -20,3 +20,15 @@ jobs:
       run: |
            docker build -f test.Dockerfile  -t test_tag:${IMAGE_TAG} .
            docker run test_tag:${IMAGE_TAG}
+   
+    - name: Automatic pull request review
+        automate-pullrequest-review:
+          runs-on: ubuntu-latest
+          steps:
+            - name: Approve pull request
+              if: github.actor == 'dependabot[bot]'
+              uses: andrewmusgrave/automatic-pull-request-review@0.0.5
+              with:
+                repo-token: ${{ secrets.GITHUB_TOKEN }}
+                event: APPROVE
+                body: 'Thank you dependabot 🎊'
