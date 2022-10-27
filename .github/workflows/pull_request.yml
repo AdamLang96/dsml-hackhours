@@ -1,9 +1,9 @@
 name: pull-request
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["Docker Image CI"]
+    types:
+      - completed
 jobs:
   assign:
     runs-on: ubuntu-latest
