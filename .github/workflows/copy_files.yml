@@ -1,28 +1,21 @@
-name: Push files
-on:
-  push:
-    branches:
-      - 'main'
+name: Push File
+
+on: push
+
 jobs:
-  copy-files:
+  copy-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          repository: AdamLang96/DestDir
-          token: $ {{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-          path: challenges
-          
-      - name: Copy Files
-        shell: bash
-        run: |
-          cp -rf challenges/ challenges/
-          
-        
-    
-  
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'challenges'
+        destination_repo: 'AdamLang96DestDir'
+        destination_folder: 'challenges'
+        user_email: 'adamglang96@gmail.com'
+        user_name: 'AdamLang96'
