@@ -1,7 +1,6 @@
 import pytest
 from solutions.file1 import highest_profit
 
-
 # Testing highest_profit with invalid inputs
 # Expected input: list of integers
 @pytest.mark.parametrize("apple_stock, profit", 
