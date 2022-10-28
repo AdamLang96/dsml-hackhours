@@ -1,4 +1,4 @@
-name: Push Tests
+name: Push Test
 
 on: push
 
@@ -16,4 +16,5 @@ jobs:
       with:
         source_file: 'tests'
         destination_repo: 'AdamLang96/DestDir'
-        destination_folder: 'tests'
+        destination_folder: 'test'
+
