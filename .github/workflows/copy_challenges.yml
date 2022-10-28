@@ -15,7 +15,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'challenges'
-        destination_repo: 'AdamLang96/DestDir'
+        destination_repo: 'AdamLang96/dsml-hack-hours-2'
         user_email: 'codesmith@codesmith.io'
         user_name: 'codesmith'
 
