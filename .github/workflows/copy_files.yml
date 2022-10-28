@@ -17,5 +17,4 @@ jobs:
         source_file: 'challenges'
         destination_repo: 'AdamLang96/DestDir'
         destination_folder: 'challenges'
-        user_email: 'adamglang96@gmail.com'
-        user_name: 'AdamLang96'
+
