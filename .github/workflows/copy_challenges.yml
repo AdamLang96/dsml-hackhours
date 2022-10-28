@@ -17,4 +17,6 @@ jobs:
         source_file: 'challenges'
         destination_repo: 'AdamLang96/DestDir'
         destination_folder: 'challenges'
+        user_email: 'codesmith@codesmith.io'
+        user_name: 'codesmith'
 
